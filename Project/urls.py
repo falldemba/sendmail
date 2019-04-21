@@ -15,7 +15,14 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
+from sendmail import views
+from datetime import datetime
+from django.conf.urls import url,include
+import django.contrib.auth.views
+from django.conf import settings
+from django.conf.urls.static import static
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    url('',include('sendmail.url_sendmail')),
 ]
